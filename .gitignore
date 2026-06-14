@@ -1,0 +1,19 @@
+# Editor and IDE config
+.idea/
+.vscode/
+*.iml
+*.swp
+.DS_Store
+
+# Claude Code local settings (machine-specific permissions, not part of the skill)
+.claude/
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+*.egg-info/
+
+# Raw eval run artifacts.
+# Curated results live in skills/no-em-dashes/evals/results/ and are committed.
+no-em-dashes-workspace/
