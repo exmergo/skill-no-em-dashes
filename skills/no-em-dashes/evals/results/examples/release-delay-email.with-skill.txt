@@ -1,0 +1,18 @@
+Subject: Release moving to next Wednesday
+
+Hi team,
+
+A quick update on the release timeline. We're moving the launch from this Friday to next Wednesday.
+
+Here's why. During QA, we found a blocker in the payments flow. It's the kind of issue we want to fix properly rather than patch under pressure, since payments is one area where we can't afford to get it wrong. Pushing the date gives us the room to do that the right way.
+
+I know a slip is never the news anyone hopes for, especially when we were this close. But I'm confident this is the right call. Shipping a clean, reliable payments experience matters far more than hitting Friday, and a few extra days now will save us a lot of headaches later.
+
+Huge thanks to QA for catching this before it reached customers, and to everyone who's been pushing hard to get us here. The work you've done still stands; we're just giving it the finish it deserves.
+
+I'll keep you posted as the fix lands and we lock in the new date. If you have questions or concerns, my door is open.
+
+Thanks for rolling with this.
+
+Best,
+Marco

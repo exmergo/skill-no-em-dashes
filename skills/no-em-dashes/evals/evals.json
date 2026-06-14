@@ -1,0 +1,41 @@
+{
+  "skill_name": "no-em-dashes",
+  "evals": [
+    {
+      "id": 0,
+      "prompt": "Write a short product launch announcement (around 150 words) for our new project management app called Taskloop. Make it punchy and exciting, the kind of thing that goes at the top of our homepage and in a launch tweet thread.",
+      "expected_output": "Punchy marketing copy with zero em dashes or stand-ins; the energetic cadence is achieved with colons, periods, and short sentences rather than dashes.",
+      "files": [],
+      "assertions": [
+        "Contains zero em dash characters (U+2014)",
+        "Passes the bundled checker: no dash stand-ins (double hyphen, spaced hyphen, stray en dash, horizontal bar) used as sentence punctuation",
+        "Legitimate hyphens and compounds are preserved; the prose is not over-corrected into choppy fragments",
+        "Reads as punchy, energetic homepage/launch copy at roughly the requested length (~150 words)."
+      ]
+    },
+    {
+      "id": 1,
+      "prompt": "Help me write an email to my team letting them know we're pushing the release from this Friday to next Wednesday, because QA found a blocker in the payments flow that we need to fix properly. Keep it warm but professional, and reassure them it's the right call.",
+      "expected_output": "A warm, professional email with no em dashes or stand-ins; asides and explanations are handled with commas, parentheses, or separate sentences.",
+      "files": [],
+      "assertions": [
+        "Contains zero em dash characters (U+2014)",
+        "Passes the bundled checker: no dash stand-ins (double hyphen, spaced hyphen, stray en dash, horizontal bar) used as sentence punctuation",
+        "Legitimate hyphens and compounds are preserved; the prose is not over-corrected into choppy fragments",
+        "Warm, professional email that explains the Friday-to-Wednesday slip, names the payments QA blocker, and reassures the team; asides handled with commas, parentheses, or separate sentences."
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Write a short fiction scene, about 200 words, where two coworkers argue in an office break room. One of them keeps getting cut off mid-sentence by the other. Make the tension feel real.",
+      "expected_output": "Narrative prose and dialogue with no em dashes or stand-ins; mid-sentence interruptions are rendered with ellipses or hard stops plus narration, not dashes.",
+      "files": [],
+      "assertions": [
+        "Contains zero em dash characters (U+2014)",
+        "Passes the bundled checker: no dash stand-ins (double hyphen, spaced hyphen, stray en dash, horizontal bar) used as sentence punctuation",
+        "Legitimate hyphens and compounds are preserved; the prose is not over-corrected into choppy fragments",
+        "~200-word scene where mid-sentence interruptions are rendered with trailing-off, hard stops, or narration rather than dashes, and the tension reads naturally."
+      ]
+    }
+  ]
+}

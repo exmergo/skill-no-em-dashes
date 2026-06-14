@@ -1,0 +1,16 @@
+Subject: Update on the Release Timeline — Moving to Next Wednesday
+
+Hi team,
+
+I wanted to give you a quick heads-up on the release schedule. We're going to move our launch from this Friday to next Wednesday.
+
+During testing, QA uncovered a blocker in the payments flow — something we need to address properly rather than patch over at the last minute. Given that payments are core to the experience, shipping with this unresolved isn't a risk worth taking.
+
+I know a lot of you have been pushing hard to hit Friday, and I genuinely appreciate that effort. This change isn't a reflection of the work you've put in; it's exactly because the work matters that we want to get it right. The extra few days give us the room to fix the issue, verify it thoroughly, and release something we're all confident in.
+
+I'm confident this is the right call, and I'd much rather we ship a little later than ship something that lets our users down. If anyone has questions or concerns about the new timeline, my door is open — please reach out anytime.
+
+Thanks for your flexibility and for everything you've put into this. Let's land it well.
+
+Best,
+Marco
