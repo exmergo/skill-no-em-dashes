@@ -18,11 +18,11 @@ AI agents for data analytics. See more of our work at
 
 ### Option 1: As a plugin (recommended)
 
-This repository is both a Claude Code plugin and its own marketplace, so two commands
-get you a versioned, updatable install. Inside Claude Code:
+This skill is published through the [Exmergo Skills](https://github.com/exmergo/exmergo-skills)
+marketplace. Add the catalog once, then install the skill. Inside Claude Code:
 
 ```
-/plugin marketplace add exmergo/skill-no-em-dashes
+/plugin marketplace add exmergo/exmergo-skills
 /plugin install no-em-dashes@exmergo-skills
 ```
 
@@ -69,7 +69,6 @@ in code, file paths, URLs, and math.
 ```
 .claude-plugin/
   plugin.json                  plugin manifest (name, version, author)
-  marketplace.json             marketplace catalog listing this plugin
 skills/
   no-em-dashes/                the skill itself
     SKILL.md                   the instructions Claude loads
