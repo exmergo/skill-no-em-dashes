@@ -36,6 +36,30 @@
         "Legitimate hyphens and compounds are preserved; the prose is not over-corrected into choppy fragments",
         "~200-word scene where mid-sentence interruptions are rendered with trailing-off, hard stops, or narration rather than dashes, and the tension reads naturally."
       ]
+    },
+    {
+      "id": 3,
+      "prompt": "Write a roughly 1000-word essay on the importance of skills in AI agents. Make it thoughtful and well-structured, the kind of piece that could run on a company engineering blog. Cover what skills are, why they matter for agent reliability and capability, and where they are headed.",
+      "expected_output": "A ~1000-word essay with zero em dashes or stand-ins; the reflective, long-form cadence is carried by commas, semicolons, colons, and periods rather than dashes.",
+      "files": [],
+      "assertions": [
+        "Contains zero em dash characters (U+2014)",
+        "Passes the bundled checker: no dash stand-ins (double hyphen, spaced hyphen, stray en dash, horizontal bar) used as sentence punctuation",
+        "Legitimate hyphens and compounds are preserved; the prose is not over-corrected into choppy fragments",
+        "A coherent, well-structured essay of roughly 1000 words on the importance of skills in AI agents."
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "Write roughly 1000 words of marketing copy for the landing page of a brand-new (fictional) AI startup whose product is AI for cats: an AI-powered app and smart device that reads your cat's behavior, mood, and health and helps you care for them. Invent a brand name and the product details. Write it the way a real landing page reads, with a punchy hero headline and subhead, sections for the key features and benefits, a bit of social proof or testimonials, and a strong closing call to action. Make it exciting and persuasive.",
+      "expected_output": "A ~1000-word landing page with zero em dashes or stand-ins; the persuasive cadence is carried by colons, short sentences, and parentheses rather than dramatic dashes.",
+      "files": [],
+      "assertions": [
+        "Contains zero em dash characters (U+2014)",
+        "Passes the bundled checker: no dash stand-ins (double hyphen, spaced hyphen, stray en dash, horizontal bar) used as sentence punctuation",
+        "Legitimate hyphens and compounds are preserved; the prose is not over-corrected into choppy fragments",
+        "Roughly 1000 words of persuasive landing-page marketing copy for the fictional AI-for-cats startup, with a hero section, features/benefits, social proof, and a closing call to action."
+      ]
     }
   ]
 }

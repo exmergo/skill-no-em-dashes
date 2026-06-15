@@ -1,0 +1,6 @@
+eval_id,eval_name,description,without_skill_em_dashes,with_skill_em_dashes
+0,launch-announcement,marketing launch copy (~150 words),0,0
+1,release-delay-email,team email (~250 words),3,0
+2,breakroom-dialogue,fiction scene with interrupted dialogue (~200 words),5,0
+3,skills-essay,long-form essay (~1000 words),6,0
+4,ai-for-cats,long-form landing page marketing copy (~1000 words),18,0
