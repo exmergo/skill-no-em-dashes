@@ -16,6 +16,8 @@ The goal is to catch dashes doing the work of sentence punctuation, not to
   - hyphens inside code spans, fenced code blocks, and URLs
   - minus signs in arithmetic (5 - 3)
   - list markers at the start of a line ("- item")
+  - markdown structure: front matter delimiters and horizontal rules (a line of
+    three or more hyphens) and table separator rows (| --- | --- |)
 """
 
 import re
@@ -50,6 +52,24 @@ def mask_code_and_urls(line):
     for m in re.finditer(r"\S+/\S+", line):        # file paths / slashed tokens
         blank(m)
     return "".join(masked)
+
+
+def is_markdown_dash_structure(line):
+    """True if the line is markdown structure that legitimately uses hyphen runs.
+
+    These are formatting, not sentence punctuation, so they are not stand-ins:
+      - a front matter delimiter or horizontal rule (a line of only hyphens, 3+),
+      - a table separator row (only pipes, hyphens, colons, and spaces).
+
+    A line of prose is never matched here, so a real stand-in that happens to use
+    three hyphens, like "she paused --- then left", is still caught.
+    """
+    stripped = line.strip()
+    if re.fullmatch(r"-{3,}", stripped):
+        return True
+    if "|" in stripped and "-" in stripped and re.fullmatch(r"[\s|:-]+", stripped):
+        return True
+    return False
 
 
 def find_hits(line):
@@ -97,6 +117,10 @@ def check(text):
             in_fence = not in_fence
             continue
         if in_fence:
+            continue
+        # Leave markdown structure (front matter, horizontal rules, table
+        # separators) alone; its hyphen runs are formatting, not punctuation.
+        if is_markdown_dash_structure(line):
             continue
         for col, matched, fix in find_hits(line):
             hits.append((line_no, col + 1, matched, fix))

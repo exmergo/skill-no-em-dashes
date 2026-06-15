@@ -28,6 +28,7 @@ The target is the em dash and its stand-ins acting as sentence punctuation. Noth
 
 - Keep ordinary hyphens in compounds: well-known, state-of-the-art, twenty-one, a five-year-old, mother-in-law.
 - Keep hyphens and en dashes in genuine number, date, and score ranges if they appear (for example 10-20, 2019-2024, a 3-1 win), and keep hyphens in code, file paths, URLs, command flags, and math. Never "fix" a minus sign.
+- Leave Markdown structure alone. A line of three or more hyphens (a front matter delimiter or a horizontal rule) and a table separator row like `| --- | --- |` are formatting, not punctuation. A run of three hyphens used as a pause inside a sentence is still a stand-in, so recast that.
 - Do not become so dash-averse that you start chopping sentences into choppy fragments. Good prose still flows; you are removing a crutch, not the connective tissue.
 
 ## Refuse the sentence shape, not just the character

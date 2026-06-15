@@ -92,6 +92,37 @@ class LeavesLegitimateUsesAlone(unittest.TestCase):
         self.assertEqual(hit_count(text), 0)
 
 
+class MarkdownStructureIsNotFlagged(unittest.TestCase):
+    """Runs of hyphens used as markdown formatting are not em-dash stand-ins."""
+
+    def test_front_matter_delimiter(self):
+        text = "---\ntitle: Hello\n---\nBody text here."
+        self.assertEqual(hit_count(text), 0)
+
+    def test_horizontal_rule(self):
+        self.assertEqual(hit_count("Above.\n\n---\n\nBelow."), 0)
+
+    def test_longer_horizontal_rule(self):
+        self.assertEqual(hit_count("Above.\n\n----\n\nBelow."), 0)
+
+    def test_table_separator_spaced(self):
+        self.assertEqual(hit_count("| Col A | Col B |\n| --- | --- |\n| 1 | 2 |"), 0)
+
+    def test_table_separator_unspaced(self):
+        self.assertEqual(hit_count("| A | B |\n|---|---|\n| 1 | 2 |"), 0)
+
+    def test_table_separator_with_alignment_colons(self):
+        self.assertEqual(hit_count("| A | B |\n| :-- | --: |\n| 1 | 2 |"), 0)
+
+    def test_prose_triple_hyphen_still_flagged(self):
+        # A run of three hyphens used as a pause in prose is still a stand-in.
+        self.assertEqual(hit_count("She paused --- then left."), 1)
+
+    def test_double_hyphen_in_prose_still_flagged(self):
+        # The fix must not weaken the ordinary double-hyphen case.
+        self.assertEqual(hit_count("This isn't a tool -- it's a platform."), 1)
+
+
 class ReportsLocationAndExitCode(unittest.TestCase):
     """Hits carry a 1-indexed line and column; clean text reports nothing."""
 
