@@ -191,6 +191,10 @@ Contributions are welcome. See [CONTRIBUTING.md](CONTRIBUTING.md) for how to pro
 changes, and please keep your own prose and commit messages em-dash free (the checker
 will tell you if you slip).
 
+## Privacy
+
+The skill collects no data and runs locally. See [PRIVACY.md](PRIVACY.md).
+
 ## License
 
 [MIT](LICENSE).
