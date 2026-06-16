@@ -18,7 +18,7 @@ AI agents for data analytics. See more of our work at
 [exmergo.com/open-research](https://www.exmergo.com/open-research).
 
 
-## Install
+## Install (Claude Code)
 
 ### Option 1: As a plugin (recommended)
 
@@ -142,13 +142,34 @@ hyphens that belong there.
 
 ## Does it work?
 
-Yes. See [`skills/no-em-dashes/evals/results/`](skills/no-em-dashes/evals/results),
-including [`em_dash_counts.csv`](skills/no-em-dashes/evals/results/em_dash_counts.csv).
-Across five prompts (short marketing copy, a team email, an interrupted-dialogue scene,
-a 1000-word essay, and a 1000-word landing page), the skill produced zero em dashes
-every time. The skill-free baseline produced them in four of the five, and the count
-climbed with length and rhetorical heat: 3 in the email, 5 in the dialogue, 6 in the
-essay, and 18 in the landing page.
+Yes. We ran five realistic prompts twice each, once with the skill active and once with
+a skill-free baseline, then counted the em dashes in every output.
+
+A note on method: the baseline runs are generated with the skill fully disabled. A
+skill that is installed globally will otherwise clean the baseline too and hide the
+effect, so isolating it matters.
+
+| Prompt | Length | Baseline | With skill |
+|--------|--------|:--------:|:----------:|
+| Marketing launch copy | ~150 words | 0 | 0 |
+| Team email | ~250 words | 3 | 0 |
+| Interrupted dialogue | ~200 words | 5 | 0 |
+| Essay | ~1,000 words | 6 | 0 |
+| Landing page | ~1,000 words | 18 | 0 |
+| **Total** | | **32** | **0** |
+
+The skill held every output at zero. The skill-free baseline produced em dashes in four
+of the five prompts, and the count climbed with length and rhetorical heat, peaking at
+18 in the landing page. Short, punchy copy was the only baseline that stayed clean,
+which fits the pattern: em dashes surface most in longer, reflective, or persuasive
+prose.
+
+The prompts live in [`evals.json`](skills/no-em-dashes/evals/evals.json), the per-eval
+counts in [`em_dash_counts.csv`](skills/no-em-dashes/evals/results/em_dash_counts.csv),
+and example outputs under
+[`evals/results/examples/`](skills/no-em-dashes/evals/results/examples). You can also
+explore the results in [an interactive chart on Exmergo Viz](https://viz.exmergo.com/share/bdf5ac3f-76d9-40f4-acf6-300b295bc537),
+our AI agent for charting and dashboards.
 
 ## Running the tests
 
