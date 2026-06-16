@@ -93,8 +93,10 @@ changes when you bump it.
 2. Run the checks below and make sure they pass.
 3. Bump `"version"` in `.claude-plugin/plugin.json` (semantic versioning: patch for
    fixes, minor for additive changes, major for breaking ones).
-4. Commit and push to `main`.
-5. If the catalog pins this skill to a `ref` or `sha` (rather than tracking the default
+4. Update `CHANGELOG.md`: add a section for the new version and move the relevant notes
+   under it.
+5. Commit and push to `main`.
+6. If the catalog pins this skill to a `ref` or `sha` (rather than tracking the default
    branch), update that pin in `exmergo/exmergo-skills`. Otherwise users get the new
    version automatically on their next `marketplace update`.
 
@@ -109,16 +111,12 @@ claude plugin validate .
 # 2. The checker's unit tests pass (standard library only, no dependencies).
 python -m unittest discover tests
 
-# 3. Dogfood: the repo's own prose must be em-dash clean. The baseline example
-#    files under evals/results/examples/ are evidence and intentionally contain
-#    em dashes, so exclude them.
-for f in README.md CONTRIBUTING.md CODE_OF_CONDUCT.md MAINTAINING.md \
-         skills/no-em-dashes/SKILL.md \
-         skills/no-em-dashes/evals/results/README.md \
-         skills/no-em-dashes/evals/results/benchmark.md \
-         skills/no-em-dashes/evals/results/examples/*.with-skill.txt; do
-  python skills/no-em-dashes/scripts/check_em_dashes.py "$f"
-done
+# 3. Dogfood: the repo's own prose must be em-dash clean. This is the same command
+#    CI runs: it scans every tracked .md/.mdc/.txt file and excludes the baseline
+#    eval examples, which intentionally contain em dashes as evidence.
+git ls-files '*.md' '*.mdc' '*.txt' \
+  | grep -v '\.baseline\.txt$' \
+  | xargs python skills/no-em-dashes/scripts/check_em_dashes.py
 ```
 
 ## Optional: submit to the Anthropic community marketplace
