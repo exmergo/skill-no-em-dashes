@@ -1,6 +1,7 @@
 # no-em-dashes
 
-<img width="1176" height="778" alt="exmergo-no-em-dashes-skill" src="https://github.com/user-attachments/assets/acb2db7a-b5eb-42de-aa90-d38be64ef45d" />
+<img width="1112" height="744" alt="image" src="https://github.com/user-attachments/assets/2e5fdb6a-3f8d-494e-bcdf-ac9fdd4c0dbd" />
+
 
 [![CI](https://github.com/exmergo/skill-no-em-dashes/actions/workflows/ci.yml/badge.svg)](https://github.com/exmergo/skill-no-em-dashes/actions/workflows/ci.yml)
 
@@ -168,7 +169,7 @@ The prompts live in [`evals.json`](skills/no-em-dashes/evals/evals.json), the pe
 counts in [`em_dash_counts.csv`](skills/no-em-dashes/evals/results/em_dash_counts.csv),
 and example outputs under
 [`evals/results/examples/`](skills/no-em-dashes/evals/results/examples). You can also
-explore the results in [an interactive chart on Exmergo Viz](https://viz.exmergo.com/share/bdf5ac3f-76d9-40f4-acf6-300b295bc537),
+explore the results in [an interactive chart on Exmergo Viz](https://viz.exmergo.com/share/f1ca78ff-7c20-4841-800a-6bca7abf70c1),
 our AI agent for charting and dashboards.
 
 ## Running the tests
