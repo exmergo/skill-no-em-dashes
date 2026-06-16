@@ -1,5 +1,8 @@
 # no-em-dashes
 
+<img width="1176" height="778" alt="exmergo-no-em-dashes-skill" src="https://github.com/user-attachments/assets/acb2db7a-b5eb-42de-aa90-d38be64ef45d" />
+
+
 A [Claude Code](https://code.claude.com/docs/en/skills) skill that produces writing
 with zero em dashes, and, just as important, writing built out of sentences that never
 reach for one in the first place.
