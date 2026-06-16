@@ -46,7 +46,7 @@ individual is officially representing the community in public spaces.
 ## Enforcement
 
 Instances of abusive, harassing, or otherwise unacceptable behavior may be reported to
-the maintainers at marco.ciavarella@exmergo.com. All complaints will be reviewed and
+the maintainers at founding.team@exmergo.com. All complaints will be reviewed and
 investigated promptly and fairly. Maintainers are obligated to respect the privacy and
 security of the reporter of any incident.
 
