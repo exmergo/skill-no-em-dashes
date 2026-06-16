@@ -7,7 +7,10 @@ welcome, from a typo fix to a new entry in the rewrite playbook.
 
 - **Improve the skill instructions.** If you find a sentence shape the skill handles
   badly, or a rewrite that reads awkwardly, propose a clearer rule or a better worked
-  example in `skills/no-em-dashes/SKILL.md`.
+  example. The guidance is mirrored in two self-contained files, `skills/no-em-dashes/SKILL.md`
+  (Claude Code) and `AGENTS.md` (all other agents), so a change to the rule itself
+  belongs in both. See "Keeping the guidance in sync" in
+  [MAINTAINING.md](MAINTAINING.md) for why.
 - **Sharpen the checker.** If `skills/no-em-dashes/scripts/check_em_dashes.py` flags
   something legitimate (a false positive) or misses a real stand-in (a false
   negative), open an issue with the exact text, or send a fix with a test that covers
@@ -35,7 +38,12 @@ welcome, from a typo fix to a new entry in the rewrite playbook.
    python skills/no-em-dashes/scripts/check_em_dashes.py path/to/your/file.md
    ```
 
-3. **Explain the why.** For changes to the skill, a sentence on the reasoning helps
+3. **Keep the two guidance files in sync.** If your change touches the rule itself,
+   update both `skills/no-em-dashes/SKILL.md` and `AGENTS.md` in the same pull request.
+   The per-tool files under `.cursor/`, `.github/`, and `.windsurf/` point to `AGENTS.md`
+   and do not need changing.
+
+4. **Explain the why.** For changes to the skill, a sentence on the reasoning helps
    more than the change alone. The skill works best when the model understands the
    intent, not just the rule.
 

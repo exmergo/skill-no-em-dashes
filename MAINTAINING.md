@@ -13,8 +13,31 @@ not this repo, then install the skill from it.
   plugin.json          plugin manifest: name, version, author, repository
 skills/
   no-em-dashes/        the skill (SKILL.md, scripts/, evals/)
+AGENTS.md              canonical cross-agent guidance (Cursor, Copilot, Windsurf, ...)
+.cursor/ .github/ .windsurf/   per-tool rule files that point to AGENTS.md
 tests/                 standard-library unit tests for the checker
 ```
+
+## Keeping the guidance in sync
+
+The actual writing guidance lives in two self-contained files on purpose:
+
+- `skills/no-em-dashes/SKILL.md` for Claude Code (it needs YAML frontmatter for
+  triggering, can be longer because it loads on demand, and calls the checker via
+  `${CLAUDE_SKILL_DIR}`).
+- `AGENTS.md` for every other agent (always-on context, so it is deliberately leaner
+  and assumes no skill runtime).
+
+Neither can point at the other, because each travels alone: a skill is copied as a
+self-contained folder, and `AGENTS.md` is copied into other people's repos by itself.
+So the core rule (the banned constructs, the replacement playbook, the
+do-not-overcorrect list) is intentionally mirrored in both.
+
+The trade-off we accepted: when you change the rule itself, edit **both** files in the
+same commit. The dogfood check guarantees neither file introduces an em dash, but it
+cannot tell you the two have drifted in wording, so that part is on the author. The
+per-tool files under `.cursor/`, `.github/`, and `.windsurf/` are thin pointers to
+`AGENTS.md` and do not need editing when the rule changes.
 
 ## How users install
 
@@ -64,7 +87,9 @@ You can ship privately to the team, then open up with no repackaging.
 Updates are version-gated: because `plugin.json` sets a `version`, users only receive
 changes when you bump it.
 
-1. Make your edits to the skill, checker, or docs.
+1. Make your edits to the skill, checker, or docs. If you changed the rule itself,
+   update both `skills/no-em-dashes/SKILL.md` and `AGENTS.md` together (see "Keeping the
+   guidance in sync").
 2. Run the checks below and make sure they pass.
 3. Bump `"version"` in `.claude-plugin/plugin.json` (semantic versioning: patch for
    fixes, minor for additive changes, major for breaking ones).
