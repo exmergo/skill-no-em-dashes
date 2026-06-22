@@ -23,21 +23,21 @@ AI agents for data analytics. See more of our work at
 
 ### Option 1: As a plugin (recommended)
 
-This skill is published through the [Exmergo Skills](https://github.com/exmergo/exmergo-skills)
+This skill is published through the [Exmergo](https://github.com/exmergo/exmergo-agent-plugins)
 marketplace. Add the catalog once, then install the skill. Inside Claude Code:
 
 1. Add the marketplace
 ```
-/plugin marketplace add exmergo/exmergo-skills
+/plugin marketplace add exmergo/exmergo-agent-plugins
 ```
 
 2. Install the skill as a plugin
 ```
-/plugin install no-em-dashes@exmergo-skills
+/plugin install no-em-dashes@exmergo
 ```
 
 The skill then loads automatically and runs whenever Claude writes or edits prose for
-you. To update later, run `/plugin marketplace update exmergo-skills`.
+you. To update later, run `/plugin marketplace update exmergo`.
 
 ### Option 2: Manual copy
 

@@ -2,7 +2,7 @@
 
 This repo is a single Claude Code plugin (`no-em-dashes`). It is **not** a marketplace.
 It is distributed through Exmergo's catalog repo,
-[`exmergo/exmergo-skills`](https://github.com/exmergo/exmergo-skills), whose
+[`exmergo/exmergo-agent-plugins`](https://github.com/exmergo/exmergo-agent-plugins), whose
 `marketplace.json` references this repo via a `github` source. Users add that catalog,
 not this repo, then install the skill from it.
 
@@ -41,14 +41,14 @@ per-tool files under `.cursor/`, `.github/`, and `.windsurf/` are thin pointers 
 
 ## How users install
 
-Through the catalog (see [`exmergo/exmergo-skills`](https://github.com/exmergo/exmergo-skills)):
+Through the catalog (see [`exmergo/exmergo-agent-plugins`](https://github.com/exmergo/exmergo-agent-plugins)):
 
 ```
-/plugin marketplace add exmergo/exmergo-skills
-/plugin install no-em-dashes@exmergo-skills
+/plugin marketplace add exmergo/exmergo-agent-plugins
+/plugin install no-em-dashes@exmergo
 ```
 
-To pull later changes, a user runs `/plugin marketplace update exmergo-skills`.
+To pull later changes, a user runs `/plugin marketplace update exmergo`.
 
 ## First-time publish
 
@@ -97,7 +97,7 @@ changes when you bump it.
    under it.
 5. Commit and push to `main`.
 6. If the catalog pins this skill to a `ref` or `sha` (rather than tracking the default
-   branch), update that pin in `exmergo/exmergo-skills`. Otherwise users get the new
+   branch), update that pin in `exmergo/exmergo-agent-plugins`. Otherwise users get the new
    version automatically on their next `marketplace update`.
 
 ## Pre-release checks
